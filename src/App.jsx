@@ -1,10 +1,11 @@
 import Home from "./routes/Home"
 import { Outlet } from "react-router-dom"
+import Cabecalho from "./components/Cabecalho"
 export default function App (){
   return(
     <>
       <div>
-        <h1>Ola mundo</h1>
+        <Cabecalho/>
         <Outlet/>
       </div>
 
