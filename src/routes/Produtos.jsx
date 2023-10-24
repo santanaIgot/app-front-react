@@ -25,6 +25,12 @@ export default function Produtos() {
             .then(()=>(window.location = '/produtos'))
             .catch((error)=> console.log(error))
         }
+
+        // usestate para trabalhar com modal
+
+        const [open, setOpen] = useState(
+            false
+        )
   
     return(
         <>
@@ -36,8 +42,10 @@ export default function Produtos() {
 
             {/* importando modalActions */}
 
-            <ModalActions/>
-            
+            {open ? <ModalActions open={open} setOpen={setOpen}/> :""}
+
+            <button onClick={()=>setOpen(true)}>Open-modal </button>
+
             <table>
                 <thead>
                     <tr>
