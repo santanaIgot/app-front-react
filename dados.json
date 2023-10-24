@@ -1,0 +1,16 @@
+{
+    "produtos":[
+        {
+            "id":1,
+            "nome":"Fifa 2024",
+            "preco":500,
+            "descrição":"Jogo de futebol"
+        },
+          {
+            "id":2,
+            "nome":"GTA6",
+            "preco":700,
+            "descrição":"Jogo de tiro"
+        }
+    ]
+}
