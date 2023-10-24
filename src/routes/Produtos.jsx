@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import ModalActions from "../components/ModalActions";
 
 
 export default function Produtos() {
@@ -33,6 +34,10 @@ export default function Produtos() {
 
             <h1>Lista de jogos</h1>
 
+            {/* importando modalActions */}
+
+            <ModalActions/>
+            
             <table>
                 <thead>
                     <tr>
