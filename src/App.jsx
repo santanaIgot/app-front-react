@@ -1,3 +1,4 @@
+import styles from "./Css/App.module.css"
 import Home from "./routes/Home"
 import { Outlet } from "react-router-dom"
 import Cabecalho from "./components/Cabecalho"
