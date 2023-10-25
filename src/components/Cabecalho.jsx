@@ -14,7 +14,7 @@ export default function Cabecalho(params) {
                     <Link to = "/login">Login</Link>
                 </li>
                 <li>
-                    <Link to = "/produtos">Produtos</Link>
+                    {/* <Link to = "/produtos">Produtos</Link> */}
                 </li>
                 <li>
                     <Link to = "/sobre">Sobre nós</Link>
