@@ -1,17 +1,10 @@
 {
   "produtos": [
     {
-      "id":1,
-      "nome":"Fifa 2024",
+      "id": 1,
+      "nome": "Fifa 2024",
       "descricao": "Jogo de futebol",
-      "preco":"500"
-    },
-    
-     {
-      "id":2,
-      "nome":"Fifa 2024",
-      "descricao": "Jogo de futebol",
-      "preco":"500"
+      "preco": "500"
     }
   ]
 }
