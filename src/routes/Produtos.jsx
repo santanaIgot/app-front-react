@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+
 import ModalActions from "../components/ModalActions";
 
 
@@ -10,7 +11,7 @@ export default function Produtos() {
             // useEffect recebe uma arrowFunction quando acontece determinado evento 
             ()=>{
                 // quando ocorrer qualquer evento ele fará uma requisição HTTP
-                fetch('http://localhost:5000/produtos')
+                fetch('http://localhost:5001/produtos')
                 .then((resp)=>resp.json())
                 .then((resposta)=>{
                     console.log(resposta);
@@ -21,16 +22,20 @@ export default function Produtos() {
         )
 
         const handleDelete = (id)=>{
-            fetch(`http://localhost:5000/produtos/${id}`, {method:'delete'})
+            fetch(`http://localhost:5001/produtos/${id}`, {method:'delete'})
             .then(()=>(window.location = '/produtos'))
             .catch((error)=> console.log(error))
         }
 
         // usestate para trabalhar com modal
 
-        const [open, setOpen] = useState(
-            false
-        )
+        const [open, setOpen] = useState(false)
+        const [prodID, setProdID] = useState(0)
+
+        const handleEdit = (id) =>{
+            setProdID(id);
+            setOpen(true);
+        }
   
     return(
         <>
@@ -42,9 +47,9 @@ export default function Produtos() {
 
             {/* importando modalActions */}
 
-            {open ? <ModalActions open={open} setOpen={setOpen}/> :""}
-
-            <button onClick={()=>setOpen(true)}>Open-modal </button>
+            {open ? <ModalActions open={open} id={prodID} setOpen={setOpen}/> :""}
+            
+            
 
             <table>
                 <thead>
@@ -68,9 +73,11 @@ export default function Produtos() {
                                 <td>{prod.preco}</td>
                                 <td>{prod.descricao}</td>
                                 <td>
-                                    <button onClick={handleDelete.bind(this,prod.id)}>X</button>
+                                    <button onClick={handleDelete.bind(this,prod.id)}>X</button> | <button onClick={()=>handleEdit(prod.id)}>Editar</button>
                                 </td>
                             </tr>
+
+
                         ))
                     }
                 </tbody>
